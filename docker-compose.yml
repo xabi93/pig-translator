@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+    volumes:
+      - .:/go/src/github.com/xabi93/translator
+    working_dir: /go/src/github.com/xabi93/translator
+    ports: 
+      - "8080:8080"
+    command: go run cmd/api/main.go
