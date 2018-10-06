@@ -6,7 +6,7 @@ import (
 	"unicode"
 )
 
-type WordTranslator interface {
+type wordTranslator interface {
 	translateWord(string) string
 }
 
@@ -18,7 +18,7 @@ const (
 type pigLatingWordTranslator struct {
 }
 
-func (t *pigLatingWordTranslator) TranslateWord(word string) string {
+func (t *pigLatingWordTranslator) translateWord(word string) string {
 	firstLetter := []rune(word)[0]
 
 	if t.isVowel(firstLetter) {

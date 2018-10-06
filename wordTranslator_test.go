@@ -23,7 +23,7 @@ func TestPigLatinTranslatorGivenTextTranslatesIt(t *testing.T) {
 	translator := pigLatingWordTranslator{}
 	for _, test := range translateWordToPigLatingTests {
 		t.Run(test.testTitle, func(t *testing.T) {
-			translation := translator.TranslateWord(test.text)
+			translation := translator.translateWord(test.text)
 			assert.Equal(t, test.expectedText, translation)
 		})
 	}
@@ -32,11 +32,11 @@ func TestPigLatinTranslatorGivenTextTranslatesIt(t *testing.T) {
 func TestGivenWordStartedWithVowel(t *testing.T) {
 	translator := pigLatingWordTranslator{}
 
-	assert.Equal(t, "isway", translator.TranslateWord("is"))
+	assert.Equal(t, "isway", translator.translateWord("is"))
 }
 
 func TestGivenWordStartedWithConsonant(t *testing.T) {
 	translator := pigLatingWordTranslator{}
 
-	assert.Equal(t, "isway", translator.TranslateWord("is"))
+	assert.Equal(t, "isway", translator.translateWord("is"))
 }
