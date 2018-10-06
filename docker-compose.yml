@@ -2,12 +2,12 @@ version: '3.6'
 
 services:
   app:
-    container_name: app
+    container_name: pig-translator
     build:
       context: .
     volumes:
-      - .:/go/src/github.com/xabi93/translator
-    working_dir: /go/src/github.com/xabi93/translator
+      - .:/go/src/github.com/xabi93/pig-translator
+    working_dir: /go/src/github.com/xabi93/pig-translator
     ports: 
       - "8080:8080"
     command: go run cmd/api/main.go
