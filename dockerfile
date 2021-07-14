@@ -1,4 +1,4 @@
-FROM golang:1.11.0-alpine
+FROM golang:1.16.6-alpine
 
 RUN apk add curl \
     && apk add git mercurial
